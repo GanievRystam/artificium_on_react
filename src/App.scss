@@ -55,6 +55,12 @@ body {
 }
 .form {
   flex-direction: column;
+
+  &-link {
+    font-size: 14px !important;
+    margin-top: 10px;
+    text-align: center;
+  }
 }
 .form,
 .opinion-auth {

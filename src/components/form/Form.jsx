@@ -1,18 +1,7 @@
 import React, {useState} from "react";
-import '../../App.scss';
 import socket from "../../socket";
 import axios from "axios";
-export default function Auth ({onLogin}) {
-    const [roomId, setRoomId] = useState('');
-    const [userName, setUserName] = useState('');
-    const onEnter = async () => {
-        if(!roomId || !userName) {
-            return alert('Введите данные');
-        }
-        const obj = {roomId, userName}
-        await axios.post('/rooms', obj);
-        onLogin(obj);
-    }
+export default function Form () {
     return (
     <section className="section-auth">
         <div className="container">
@@ -25,13 +14,14 @@ export default function Auth ({onLogin}) {
                         </div>
                         <form action="" className="auth-form">
                             <div className="auth-form-wrap-input">
-                                <input type="text" name="roomId" className="auth-form__input" placeholder="Room Id" value={roomId} onChange={(e) => setRoomId(e.target.value)}/>
+                                <input type="text" name="roomId" className="auth-form__input" placeholder="Email"/>
                             </div>
                             <div className="auth-form-wrap-input">
-                                <input type="text" name="userName" className="auth-form__input" placeholder="User Name" value={userName} onChange={(e) => setUserName(e.target.value)}/>
+                                <input type="text" name="userName" className="auth-form__input" placeholder="Password"/>
                             </div>
-                            <button className="btn" type="button" onClick={onEnter}>Log in</button>
+                            <button className="btn" type="button">Log in</button>
                         </form>
+                        <a className="form-link offer__text">Зарегестрироваться</a>
                     </div>
                 </div>
             </div>

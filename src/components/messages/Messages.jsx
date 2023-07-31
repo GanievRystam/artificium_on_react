@@ -5,13 +5,6 @@ import socket from "../../socket";
 export default function Messages ({users, messages, userName, roomId, onAddMessage}) {
     const [messageValue, setMessage] = useState('');
     const onSendMessage = () => {
-        socket.emit('ROOM:NEW_MESSAGE', {
-            userName,
-            roomId,
-            text: messageValue
-        });
-        onAddMessage({userName, text: messageValue});
-        setMessage('');
     }
     return (
         <div className ="chat">
@@ -64,21 +57,17 @@ export default function Messages ({users, messages, userName, roomId, onAddMessa
             <div className ="chat-fild">
                 <div className="chat-fild" >
                     <div class ="send-items">
-                        {messages.map((message, index) => {
-                            return (
-                            <div key={index} className = "send-item">
+                            <div className = "send-item">
                                 <div className ="send-user">
                                     <div className = "send-user-wrap"> 
                                         <img className = "send-user__logo" src={`${process.env.PUBLIC_URL}/assets/img/Avatar-1.png`}/>
-                                        <div className = "send-user__name">{message.userName}</div>
+                                        <div className = "send-user__name">Djon</div>
                                         <span className = "send-user__time">11/12/2022</span>
                                         <img className = "send-user__copy" src={`${process.env.PUBLIC_URL}/assets/img/copy-icon.svg`} data-action = "copy"/>
                                     </div>
                                 </div>
-                                <div className ="send-text">{message.text}</div> 
+                                <div className ="send-text">dsafdfsa</div> 
                             </div>
-                            )
-                        })}
                     </div>
                 </div>
                 <div className ="chat-offer">
