@@ -891,6 +891,10 @@ body {
     margin-top: 16px;
     margin-right: 16px;
     height: fit-content;
+
+    &__active {
+      background: var(--glass-fill, linear-gradient(145deg, rgba(215, 237, 237, 0.16) 0%, rgba(204, 235, 235, 0.00) 100%));
+    }
   }
 
   &-user {
@@ -963,8 +967,9 @@ body {
   flex-wrap: wrap;
   &__img {
     width: 100%;
-    max-width: 300px;
+    max-width: 100px;
     height: fit-content;
+    cursor: pointer;
   }
 }
 

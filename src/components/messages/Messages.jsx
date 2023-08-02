@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import socket from "../../socket";
+import Message from "../message/Message";
 
 
 export default function Messages ({users, messages, userName, roomId, onAddMessage}) {
@@ -57,17 +58,47 @@ export default function Messages ({users, messages, userName, roomId, onAddMessa
             <div className ="chat-fild">
                 <div className="chat-fild" >
                     <div class ="send-items">
-                            <div className = "send-item">
-                                <div className ="send-user">
-                                    <div className = "send-user-wrap"> 
-                                        <img className = "send-user__logo" src={`${process.env.PUBLIC_URL}/assets/img/Avatar-1.png`}/>
-                                        <div className = "send-user__name">Djon</div>
-                                        <span className = "send-user__time">11/12/2022</span>
-                                        <img className = "send-user__copy" src={`${process.env.PUBLIC_URL}/assets/img/copy-icon.svg`} data-action = "copy"/>
-                                    </div>
-                                </div>
-                                <div className ="send-text">dsafdfsa</div> 
-                            </div>
+                        <Message text={'RUstam V Bulding'} date={'Wed Aug 02 2023 20:08:05'} userName = "Vlad" avatar={'https://ru-static.z-dn.net/files/d07/2e40a4da7a22d7c1d611506989f38753.jpg'} isMe={false} attachments={
+                                [
+                                    { 
+                                        filename: 'image.jpg',
+                                        url: 'https://oblozhek.net/wa-data/public/shop/products/38/42/4238/images/25364/25364.970.jpg'
+                                    },
+                                    { 
+                                        filename: 'image2.jpg',
+                                        url: 'https://distribution.faceit-cdn.net/images/8e6c0835-3dc5-4ce2-8421-4e07854fd71d.jpeg'
+                                    },
+                                    { 
+                                        filename: 'image3.jpg',
+                                        url: 'https://pixelbox.ru/wp-content/uploads/2021/09/avatar-boys-vk-83.jpg'
+                                    }
+                                    
+                                ]
+                            }/>
+                        <Message 
+                            text={'Мамку твою так узнавал'} 
+                            date={'Wed Aug 02 2023 20:18:05'} 
+                            userName = "Rustam" 
+                            avatar={'https://i.pinimg.com/originals/7d/1f/bc/7d1fbc73d12791ac9ca73cf2a8d0c57a.jpg'} 
+                            isMe={true}
+                            attachments={
+                                [
+                                    { 
+                                        filename: 'image.jpg',
+                                        url: 'https://oblozhek.net/wa-data/public/shop/products/38/42/4238/images/25364/25364.970.jpg'
+                                    },
+                                    { 
+                                        filename: 'image2.jpg',
+                                        url: 'https://distribution.faceit-cdn.net/images/8e6c0835-3dc5-4ce2-8421-4e07854fd71d.jpeg'
+                                    },
+                                    { 
+                                        filename: 'image3.jpg',
+                                        url: 'https://pixelbox.ru/wp-content/uploads/2021/09/avatar-boys-vk-83.jpg'
+                                    }
+                                    
+                                ]
+                            }
+                        />
                     </div>
                 </div>
                 <div className ="chat-offer">
