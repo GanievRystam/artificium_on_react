@@ -8,6 +8,7 @@ import Users from './components/users/Users';
 import Messages from './components/messages/Messages';
 import axios from 'axios';
 import Home from './pages/home/Home';
+import Register from './components/register/Register';
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
               <Routes>
                   <Route path = "/" element = {<Auth/>}></Route>
                   <Route path = "/home" element = {<Home/>}></Route>
+                  <Route path = "/register" element = {<Register/>}></Route>
               </Routes>
           </div>
         </BrowserRouter>
